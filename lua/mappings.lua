@@ -52,16 +52,16 @@ end, { desc = "terminal toggle floating term" })
 
 -- -- vim sourround
 -- map({ "n", "v"}, "<leader>sa", function()
---   require("sourround").add()
--- end, { desc = "sourround add" })
+--   require("nvim-surround").add()
+-- end, { desc = "surround add" })
 --
 -- map({ "n", "v"}, "<leader>sd", function()
---   require("sourround").delete()
--- end, { desc = "sourround delete" })
+--   require("nvim-surround").delete()
+-- end, { desc = "surround delete" })
 --
 -- map({ "n", "v"}, "<leader>sc", function()
---   require("sourround").change()
--- end, { desc = "sourround change" })
+--   require("nvim-surround").change()
+-- end, { desc = "surround change" })
 
 -- code action
 map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "lsp code action" })
@@ -126,11 +126,11 @@ map("n", "<C-s>", function()
   ui.nav_file(4)
 end)
 
--- nvim-surround
-map("n", "<leader>sa", require("nvim-surround").add_surround, { desc = "nvchad surround add" })
-map("n", "<leader>sd", require("nvim-surround").delete_surround, { desc = "nvchad surround delete" })
-map("n", "<leader>sc", require("nvim-surround").change_surround, { desc = "nvchad surround change" })
-
+-- -- nvim-surround
+-- map("n", "<leader>sa", require("nvim-surround").add_surround, { desc = "nvchad surround add" })
+-- map("n", "<leader>sd", require("nvim-surround").delete_surround, { desc = "nvchad surround delete" })
+-- map("n", "<leader>sc", require("nvim-surround").change_surround, { desc = "nvchad surround change" })
+--
 -- global lsp mappings
 map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "lsp diagnostic loclist" })
 
