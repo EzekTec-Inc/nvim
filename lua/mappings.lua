@@ -24,7 +24,6 @@ map("n", "<leader>ch", "<cmd>NvCheatsheet<CR>", { desc = "toggle nvcheatsheet" }
 map("n", "<C-d>", "<cmd>RustMoveItemDown<CR>^n", { desc = "Rust move line down" })
 map("n", "<C-u>", "<cmd>RustMoveItemUp<CR>^n", { desc = "Rust move line up" })
 map("n", "<C-k>", vim.lsp.buf.hover, { desc = "lsp hover info" })
--- map("v", "<leader>sa", "<cmd>nvim-surround<CR>", { desc = "lsp add surrounding" })
 
 -- terminal
 map("t", "<C-x>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
@@ -131,6 +130,26 @@ end)
 -- map("n", "<leader>sd", require("nvim-surround").delete_surround, { desc = "nvchad surround delete" })
 -- map("n", "<leader>sc", require("nvim-surround").change_surround, { desc = "nvchad surround change" })
 --
+require("nvim-surround").setup({
+    surrounds = {
+        ["("] = false,
+    },
+      keymaps = {
+        insert = "<C-g>s",
+        insert_line = "<C-g>S",
+        normal = "ys",
+        normal_cur = "yss",
+        normal_line = "yS",
+        normal_cur_line = "ySS",
+        visual = "ms",
+        visual_line = "gS",
+        delete = "ds",
+        change = "cs",
+        change_line = "cS",
+    },
+
+})
+
 -- global lsp mappings
 map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "lsp diagnostic loclist" })
 
