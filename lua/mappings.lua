@@ -132,7 +132,7 @@ end)
 --
 require("nvim-surround").setup({
     surrounds = {
-        ["("] = false,
+        -- ["h"] = false,
     },
       keymaps = {
         insert = "<C-g>s",
@@ -148,7 +148,7 @@ require("nvim-surround").setup({
         change_line = "cS",
     },
 
-})
+}h
 
 -- global lsp mappings
 map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "lsp diagnostic loclist" })
@@ -185,7 +185,7 @@ vim.opt.list = true
 for i = 1, 9, 1 do
   -- Move to desired buffer line using Alt + 1-9 keys
   vim.keymap.set("n", string.format("<A-%s>", i), function()
-    vim.api.nvim_set_current_buf(vim.t.bufs[i])
+    vim.api.nvim_set_current_buf(vim.t.bufsic)
   end, { desc = "which_key_ignore" })
   -- Move to desired tab group instantly using Leader + 1-9 keys
   vim.keymap.set("n", string.format("<leader>%s", i), function()
