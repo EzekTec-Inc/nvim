@@ -286,7 +286,7 @@ require("lazy").setup({
       vim.o.foldlevel = 90
       -- vim.o.foldcolumn = '1'
       -- vim.o.foldlevelstart = 99
-      vim.o.foldenable = false
+      vim.o.foldenable = true
     end,
   },
 
