@@ -125,7 +125,8 @@ return {
     cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" },
     ensure_installed = {
       "lua-language-server", "stylua",
-      "html-lsp", "css-lsp" , "prettier"
+      "html-lsp", "css-lsp" , "prettier",
+      "rust-analyzer"
     },
     opts = function()
       return require "nvchad.configs.mason"

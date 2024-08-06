@@ -275,6 +275,21 @@ require("lazy").setup({
     "thePrimeagen/harpoon",
   },
 
+  -- code folding
+  {
+    "kevinhwang91/nvim-ufo",
+    dependencies = "kevinhwang91/promise-async",
+    event = "BufReadPost",
+   -- { 'neoclide/coc.nvim', branch = 'master', run = 'yarn install --frozen-lockfile' },
+    config = function()
+      require("ufo").setup()
+      vim.o.foldlevel = 90
+      -- vim.o.foldcolumn = '1'
+      -- vim.o.foldlevelstart = 99
+      vim.o.foldenable = false
+    end,
+  },
+
 }, lazy_config)
 
 -- local rt = require("rust-tools")
@@ -388,7 +403,7 @@ local my_opts = {
       right_align_padding = 7,
 
       -- The color of the hints
-      highlight = { "Comment", "NOTE", "Note", "note" },
+      highlight = { "Comment", "NOTE", "Note", "note","TODO", "Todo", "todo", "FIXME", "FixMe", "fixme" },
     },
 
     -- options same as lsp hover / vim.lsp.util.open_floating_preview()
@@ -408,10 +423,10 @@ local my_opts = {
       },
 
       -- Maximal width of the hover window. Nil means no max.
-      max_width = nil,
+      max_width = math.floor( vim.o.columns * 0.75 ), -- nil,
 
       -- Maximal height of the hover window. Nil means no max.
-      max_height = nil,
+      max_height = math.floor( vim.o.lines * 0.75 ), -- nil,
 
       -- whether the hover action window gets automatically focused
       -- default: false

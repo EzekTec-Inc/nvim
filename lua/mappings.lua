@@ -110,7 +110,7 @@ map(
 -- thePrimeagen's Harpoon
 local mark = require("harpoon.mark")
 local ui = require("harpoon.ui")
-map("n", "<leader>a", mark.add_file)
+map("n", "<C-a>", mark.add_file)
 map("n", "<C-e>", ui.toggle_quick_menu)
 map("n", "<C-h>", function()
   ui.nav_file(1)
@@ -124,6 +124,10 @@ end)
 map("n", "<C-s>", function()
   ui.nav_file(4)
 end)
+
+-- code fold 
+map("n", "zR", require("ufo").openAllFolds)
+map("n", "zM", require("ufo").closeAllFolds)
 
 -- -- nvim-surround
 -- map("n", "<leader>sa", require("nvim-surround").add_surround, { desc = "nvchad surround add" })
@@ -148,7 +152,7 @@ require("nvim-surround").setup({
         change_line = "cS",
     },
 
-}h
+})
 
 -- global lsp mappings
 map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "lsp diagnostic loclist" })
