@@ -49,6 +49,7 @@ map({ "n", "t" }, "<A-i>", function()
   require("nvchad.term").toggle { pos = "float", id = "floatTerm" }
 end, { desc = "terminal toggle floating term" })
 
+
 -- -- vim sourround
 -- map({ "n", "v"}, "<leader>sa", function()
 --   require("nvim-surround").add()
@@ -118,9 +119,9 @@ end)
 map("n", "<C-t>", function()
   ui.nav_file(2)
 end)
-map("n", "<C-nn>", function()
-  ui.nav_file(3)
-end)
+-- map("n", "<C-nn>", function()
+--   ui.nav_file(3)
+-- end)
 map("n", "<C-s>", function()
   ui.nav_file(4)
 end)
@@ -155,7 +156,7 @@ require("nvim-surround").setup({
 })
 
 -- global lsp mappings
-map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "lsp diagnostic loclist" })
+map("n", "<leader>dss", vim.diagnostic.setloclist, { desc = "lsp diagnostic loclist" })
 
 -- tabufline
 map("n", "<leader>b", "<cmd>enew<CR>", { desc = "buffer new" })
@@ -177,9 +178,9 @@ end, { desc = "buffer close" })
 map("n", "<leader>/", "gcc", { desc = "comment toggle", remap = true })
 map("v", "<leader>/", "gc", { desc = "comment toggle", remap = true })
 
--- nvimtree
-map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
-map("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "nvimtree focus window" })
+-- NvimTree Focus Window
+map({ "n", "t" }, "<A-n>", "<cmd>NvimTreeToggle<CR>", { desc = "toggle NvimTree focus window" })
+map("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "open NvimTree focus window" })
 
 -- Auto resize panes when resizing nvim window
 -- ...
