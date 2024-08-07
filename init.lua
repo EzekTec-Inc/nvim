@@ -31,7 +31,7 @@ require("lazy").setup({
   { import = "plugins" },
   "ryanoasis/vim-devicons",
 
-  -- In chadrc.lua
+  -- In .lua
   {
     "kyazdani42/nvim-web-devicons",
     opt = true,
